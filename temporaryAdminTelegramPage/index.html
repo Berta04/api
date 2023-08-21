@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/adminTelegram/main.js"></script>
+    <link rel="stylesheet" href="/adminTelegram/style.css">
+    <title>Admin page for telegram handling</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="titlePage">Admin telegram</h1>
+        <div class="searchWrap">
+            <input type="text" placeholder="Insert here telegram ID" class="searchInput">
+            <button class="SearchButton" onclick="searchFunction()">
+                <img class="searchImage" src="/adminTelegram/icons/search.svg">
+            </button>
+        </div>
+        <div class="resultWrap">
+            <div class="resultUser">
+                <h2 class="TitleUserId"></h2>
+                <div class="data">
+                    <div class="database_idWrapper">
+                        <p class="label">Database ID</p>
+                        <p class="database_id"></p>
+                    </div>
+                    <div class="usernameWrapper">
+                        <p class="label">Username</p>
+                        <p class="username"></p>
+                    </div>
+                    <div class="nameWrapper">
+                        <p class="label">Name</p>
+                        <p class="name"></p>
+                    </div>
+                    <div class="surnameWrapper">
+                        <p class="label">Surname</p>
+                        <p class="surname"></p>
+                    </div>
+                </div>
+                <div class="editableData">
+                    <div class="tokensWrapper">
+                        <p class="label">Tokens</p>
+                        <input class="tokens" type="number">
+                    </div>
+                    <button class="editButton" onclick="editCurrentUser(this)">Edit</button>
+                </div>
+            </div>
+            <p class="errorMessage"></p>
+        </div> 
+    </div>
+</body>
+</html>

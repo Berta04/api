@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>test</title>
+    </head>
+    <body>
+        Testing roba
+        <input type="file" accept="image/*" class="local" />
+    </body>
+    <script>
+        const $file = document.querySelector(".local");
+        $file.addEventListener("change", (event) => {
+            const selectedfile = event.target.files;
+            if (selectedfile.length > 0) {
+                const [imageFile] = selectedfile;
+                const fileReader = new FileReader();
+                fileReader.onload = async () => {
+                    const srcData = fileReader.result;
+                    console.log(srcData);
+                    await fetch("http://localhost:8082/inpaint", {
+                        method: "post",
+                        mode: "cors",
+                        headers: {
+                            'Access-Control-Allow-Origin':"*",
+                            'Content-Type': 'application/json; charset=utf-8',
+                            Accept: 'application/json'
+                        },
+                        credentials: 'include',
+                        body: JSON.stringify(
+                            {
+                                inputBase64: srcData,
+                            }
+                        )
+                    });
+                };
+                fileReader.readAsDataURL(imageFile);
+            }
+        });
+</script>
+</html>

@@ -1,0 +1,25 @@
+{
+    "autoInpainterSettings": {
+        "maskCreatorSettings": {
+            "sam_model_name": "sam_hq_vit_h.pth",
+            "input_image": "inputBase64",
+            "sam_positive_points": [],
+            "sam_negative_points": [],
+            "dino_enabled": true,
+            "dino_model_name": "GroundingDINO_SwinT_OGC (694MB)",
+            "old_prompts" : "clothes. clothing. swimsuit. underwear. bra. breasts. boobs. bikini. panties. clothing strap. summer dress. pants. thong. tanga brief. lingerie.",
+            "dino_text_prompt": "clothing. straps. bikini. clothes. tops. pants",
+            "dino_box_threshold": 0.3,
+            "dino_preview_checkbox": false,
+            "dino_preview_boxes_selection": [
+                0
+            ]
+        },
+        "maskDilate": {
+            "pixels": 35
+        },
+        "inpaintPictureSettings": {
+           
+        }
+    }
+}
